@@ -1,0 +1,45 @@
+.plot-settings-trigger.lsv-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;font-size:12px;padding:7px 12px}
+.plot-settings-overlay{z-index:10000}
+[role=dialog].plot-settings-dialog{z-index:10001;width:min(680px,calc(100vw - 28px));max-width:680px;max-height:calc(100dvh - 36px);padding:24px;display:flex;flex-direction:column;gap:20px;overflow:hidden;background:#fff;border:1px solid #dce5ed;color:#26445d;box-sizing:border-box;border-radius:12px;font-family:Arial,'Microsoft YaHei',sans-serif}
+.plot-settings-dialog [data-slot=dialog-title]{font-size:18px;font-weight:650;text-align:left}
+.plot-settings-body{display:flex;flex-direction:column;gap:22px;overflow-y:auto;overflow-x:hidden;min-height:0;padding:0 3px 3px 0}
+.plot-settings-section,.plot-settings-extra{min-width:0}
+.plot-settings-section h3{margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid #e6edf2;font-size:13px;font-weight:600;color:#45647b}
+.plot-settings-dialog .lsv-axis-controls{display:flex;flex-direction:column;padding:0;gap:10px;background:transparent;border:0;align-items:stretch}
+.plot-settings-dialog .lsv-axis-range{display:grid;grid-template-columns:76px minmax(0,1fr) 18px minmax(0,1fr);gap:8px;min-width:0;max-width:100%;width:auto;padding:8px;background:#f8fafc;border:1px solid #dce6ee;border-radius:7px;align-items:center}
+.plot-settings-dialog .lsv-axis-range strong{font-size:12px;white-space:nowrap}
+.plot-settings-dialog input{box-sizing:border-box;min-width:0;max-width:100%;height:35px;border:1px solid #d7e3ec;border-radius:5px;padding:6px 8px;background:#fff;color:#2d4b64;font-size:12px}
+.plot-settings-dialog .lsv-axis-range input{width:100%;background:#fff}
+.plot-settings-dialog .lsv-axis-range>span{text-align:center;font-size:12px}
+.plot-settings-dialog .lsv-tick-settings-body{padding:0;border:0;background:transparent}
+.plot-settings-dialog .lsv-tick-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
+.plot-settings-dialog .lsv-tick-fields fieldset{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;min-width:0;margin:0;padding:13px;border:1px solid #dce6ee;border-radius:7px}
+.plot-settings-dialog .lsv-tick-fields legend{padding:0 5px;font-size:13px;font-weight:600}
+.plot-settings-dialog .lsv-tick-fields label{display:grid;grid-template-columns:90px minmax(0,1fr);align-items:center;gap:6px;margin-bottom:8px;font-size:12px}
+.plot-settings-dialog .lsv-tick-fields input{width:100%}
+.plot-settings-dialog .lsv-tick-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px;margin-top:12px}
+.plot-settings-dialog .lsv-tick-actions small{flex:1 1 100%;font-size:11px;color:#70869a;line-height:1.7}
+.plot-settings-dialog .lsv-button{font-size:12px;white-space:nowrap;min-height:32px;width:auto;flex:none}
+.plot-settings-dialog .lsv-error{font-size:12px;margin-top:8px;overflow-wrap:anywhere}
+html[data-desktop-theme=night] [role=dialog].plot-settings-dialog{background:#000;color:#fff;border-color:#535353}
+html[data-desktop-theme=night] .plot-settings-section h3{color:#fff;border-color:#424242}
+html[data-desktop-theme=night] .plot-settings-dialog :is(input,.lsv-axis-range,.lsv-tick-fields fieldset){background:#000;color:#fff;border-color:#535353}
+@media(max-width:620px){[role=dialog].plot-settings-dialog{padding:20px 15px;width:calc(100vw - 20px);max-height:calc(100dvh - 20px)}.plot-settings-dialog .lsv-tick-fields{grid-template-columns:1fr}.plot-settings-dialog .lsv-axis-range{grid-template-columns:62px minmax(0,1fr) 14px minmax(0,1fr);gap:5px;padding:6px}}
+
+.plot-settings-tabs{display:flex;gap:2px;padding:0 18px;border-bottom:1px solid #d5dee7;background:#f4f7fa;flex-wrap:wrap}
+.plot-settings-tabs button{border:1px solid transparent;border-bottom:0;background:transparent;color:#526b80;font:12px Arial,"Microsoft YaHei",sans-serif;padding:8px 14px;border-radius:5px 5px 0 0;cursor:pointer}
+.plot-settings-tabs button:hover{background:#eaf1f8;color:#1d4e79}
+.plot-settings-tabs button.is-active{background:#fff;border-color:#c9d5e1;color:#123f67;font-weight:600}
+.plot-settings-tabs button:focus-visible,.plot-settings-section[role=tabpanel]:focus-visible{outline:2px solid #2475c6;outline-offset:2px}
+.plot-settings-section[hidden]{display:none}
+.lsv-title-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0}
+.lsv-title-fields fieldset{display:flex;flex-direction:column;gap:12px;border:1px solid #dce6ee;border-radius:7px;padding:12px;min-width:0}
+.lsv-title-fields legend{font-size:13px;font-weight:600;padding:0 5px}
+.lsv-title-fields label{display:flex;flex-direction:column;gap:6px;font-size:12px}
+.lsv-title-fields .lsv-title-bold{flex-direction:row;align-items:center}
+.plot-settings-dialog .lsv-title-bold input{height:16px;width:16px;padding:0}
+.lsv-title-controls small{font-size:11px;line-height:1.7;color:#61778b}
+.lsv-title-controls .lsv-title-actions{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+html[data-desktop-theme=night] .lsv-title-fields fieldset{border-color:#535353}
+html[data-desktop-theme=night] .lsv-title-controls small{color:#bbb}
+@media(max-width:620px){.lsv-title-fields{grid-template-columns:1fr}}

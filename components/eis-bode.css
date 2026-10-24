@@ -1,0 +1,22 @@
+.eis-bode-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;background:#fff}
+.eis-bode-card .lsv-plot-toolbar{flex-shrink:0;gap:10px;flex-wrap:wrap}
+.eis-bode-canvas{position:relative;width:100%;height:clamp(350px,calc(100dvh - 330px),800px);min-width:0;background:#fff}
+.eis-bode-canvas>svg{display:block;width:100%;height:100%}
+.eis-bode-legend{pointer-events:none}
+.eis-bode-reading{display:flex;align-items:center;flex-wrap:wrap;gap:5px 14px;min-height:58px;padding:11px 20px;border-top:1px solid #e8eef4;font-size:12px;line-height:1.6;color:#688197;flex-shrink:0}
+.eis-bode-reading strong{color:#29445e}
+.eis-bode-reading small{font-size:11px;overflow-wrap:anywhere;max-width:100%}
+.eis-bode-ranges,.eis-bode-ticks{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start}
+.eis-bode-ranges fieldset,.eis-bode-ticks fieldset{display:grid;gap:12px;flex:1;min-width:180px;padding:14px;border:1px solid #dce5ef;border-radius:7px}
+.eis-bode-ranges legend,.eis-bode-ticks legend{padding:0 5px;color:#35516d;font-size:13px}
+.eis-bode-ranges label,.eis-bode-ticks label{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#617b93;font-size:12px}
+.eis-bode-ranges input[type=number],.eis-bode-ticks input[type=number]{width:110px;min-width:0;border:1px solid #d7e1ed;background:#fff;border-radius:5px;padding:7px 9px;font-size:13px;color:#29445e}
+.eis-bode-ticks input[type=checkbox]{margin-right:auto;accent-color:#2374d5}
+.eis-bode-ticks label:has(input[type=checkbox]){justify-content:flex-start}
+.eis-bode-ticks label:has(input[type=checkbox]) input{margin-right:0}
+.eis-bode-setting-actions{display:flex;flex-basis:100%;gap:10px;flex-wrap:wrap}
+.eis-bode-ranges>.lsv-error,.eis-bode-ticks>.lsv-error{flex-basis:100%;margin:0}
+.eis-bode-card:fullscreen{width:100%;height:100%;border-radius:0;display:flex;flex-direction:column;background:#fff;overflow:hidden}
+.eis-bode-card:fullscreen .eis-bode-canvas{flex:1;min-height:0;height:auto}
+.eis-bode-card:fullscreen .eis-bode-canvas>svg{width:100%;height:100%}
+@media(max-width:700px){.eis-bode-card .lsv-plot-toolbar{padding:10px;gap:8px}.eis-bode-canvas{height:clamp(330px,calc(100dvh - 340px),600px)}.eis-bode-reading{padding:10px 14px;font-size:11px}}

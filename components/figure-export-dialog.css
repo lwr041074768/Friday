@@ -1,0 +1,21 @@
+[role=dialog].figure-export-dialog{z-index:10001;width:min(460px,calc(100vw - 28px));max-width:460px;max-height:calc(100dvh - 36px);overflow:auto;background:#fff;color:#26445d;border:1px solid #dce5ed;border-radius:12px;padding:22px 24px;font-family:Arial,'Microsoft YaHei',sans-serif}
+.figure-export-overlay{z-index:10000}
+.figure-export-dialog [data-slot=dialog-title]{font-size:18px;font-weight:650}
+.figure-export-description{font-size:12px;color:#70869a;line-height:1.6}
+.figure-export-grid{display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px 12px;align-items:center;margin-top:6px}
+.figure-export-grid>label,.figure-export-grid>span{font-size:13px;color:#52667b}
+.figure-export-grid select,.figure-export-grid input{box-sizing:border-box;width:100%;height:36px;border:1px solid #d7e3ec;border-radius:6px;padding:6px 9px;background:#fff;color:#2d4b64;font-size:13px}
+.figure-export-grid select:disabled,.figure-export-grid input:disabled{opacity:.6;background:#f4f7fa}
+.figure-export-width{display:flex;align-items:center;gap:8px;min-width:0}
+.figure-export-width>input{width:86px;flex:0 0 86px}
+.figure-export-presets{display:flex;gap:4px;flex-wrap:wrap}
+.figure-export-presets button{min-width:34px;height:30px;border:1px solid #d7e3ec;border-radius:5px;background:#fff;color:#5a7187;font-size:12px;cursor:pointer}
+.figure-export-presets button.is-active{background:#1d6dce;border-color:#1d6dce;color:#fff}
+.figure-export-check{display:flex;align-items:center;gap:8px;font-size:13px;color:#52667b}
+.figure-export-check input{width:16px;height:16px;flex:0 0 16px}
+.figure-export-preview{margin:10px 0 0;font:12px ui-monospace,Consolas,monospace;color:#5c7891;overflow-wrap:anywhere}
+.figure-export-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+.figure-export-dialog .lsv-button{min-height:34px;padding:6px 13px;font-size:13px!important}
+html[data-desktop-theme=night] [role=dialog].figure-export-dialog{background:#000;color:#fff;border-color:#535353}
+html[data-desktop-theme=night] .figure-export-dialog select,html[data-desktop-theme=night] .figure-export-dialog input{background:#000;color:#fff;border-color:#535353}
+html[data-desktop-theme=night] .figure-export-description,html[data-desktop-theme=night] .figure-export-grid>label,html[data-desktop-theme=night] .figure-export-grid>span{color:#c9c9c9}

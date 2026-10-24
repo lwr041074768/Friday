@@ -1,0 +1,19 @@
+{
+  "name": "scientific-plot-studio-desktop",
+  "productName": "Friday",
+  "version": "0.6.0",
+  "description": "本机科研绘图工作台：LSV、过电位、EIS、Cdl、CV/Ks、Tafel、pH依赖性、XRD、Raman",
+  "private": true,
+  "type": "module",
+  "main": "main.cjs",
+  "scripts": {
+    "runtime": "node install-runtime.mjs",
+    "build": "node build.mjs",
+    "start": "electron build/app",
+    "package": "node package.mjs"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "electron": "44.7.0"
+  }
+}

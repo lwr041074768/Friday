@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {"paths":{
+    "@/components/lsv-origin-export":["./desktop/renderer/lsv-origin-export.tsx"],
+    "@/components/xy-origin-export":["./desktop/renderer/xy-origin-export.tsx"],
+    "@/components/overpotential-origin-export":["./desktop/renderer/overpotential-origin-export.tsx"],
+    "@/components/xrd-jade-reader":["./desktop/renderer/xrd-jade-reader.tsx"],
+    "@/lib/lsv-import":["./desktop/renderer/lsv-file-import.ts"],
+    "@/lib/cdl-import":["./desktop/renderer/cdl-file-import.ts"],
+    "@/*":["./*"]},"lib":["ES2023","DOM","DOM.Iterable"]},
+  "include": ["app/**/*.ts","app/**/*.tsx","components/**/*.ts","components/**/*.tsx","lib/**/*.ts","hooks/**/*.ts","desktop/renderer/**/*.ts","desktop/renderer/**/*.tsx"],
+  "exclude": ["node_modules","dist","desktop/node_modules","desktop/build","desktop/release","desktop/output","desktop/qa-*"]
+}

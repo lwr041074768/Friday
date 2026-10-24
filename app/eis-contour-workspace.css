@@ -1,0 +1,14 @@
+.eis-view-switch{display:flex;gap:4px;padding:4px;margin-top:8px;background:#edf3f5;border:1px solid #d9e5e7;border-radius:8px;width:100%}
+.eis-view-switch button{flex:1;border:0;border-radius:5px;background:transparent;padding:9px 12px;color:#586b7b;font-size:14px;font-weight:550;cursor:pointer}
+.eis-view-switch button[aria-pressed=true]{background:#fff;color:#147781;box-shadow:0 1px 4px #19495518}
+.eis-contour-options{padding:16px 18px;background:#fff;border:1px solid #dfe6ee;border-radius:10px;margin-bottom:14px;display:grid;gap:12px}
+.eis-contour-options label,.eis-spectrum-identity label{display:grid;gap:5px;min-width:0;color:#52677a;font-size:12px}
+.eis-contour-options small{font-size:12px;line-height:1.7;color:#718496}
+.eis-contour-option-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.eis-spectrum-identity{display:grid;grid-template-columns:minmax(0,1fr) 105px;gap:10px;margin:9px 0 3px}
+.eis-spectrum-identity input{min-width:0;width:100%;border:1px solid #dae3eb;border-radius:5px;background:#f8fbfc;color:#234258;padding:6px 7px;font-size:12px}
+.eis-workspace .eis-chart-view[hidden]{display:none!important}
+.eis-workspace .eis-chart-view{display:flex;flex-direction:column;min-width:0;min-height:0;flex:1}
+.eis-workspace .eis-chart-view>.lsv-custom-plot{flex:1;min-height:0}
+.eis-workspace .eis-chart-view .lsv-plot-host{height:clamp(390px,calc(100dvh - 270px),740px)}
+.eis-workspace .eis-chart-view .lsv-plot-panel:fullscreen .lsv-plot-host{height:0;flex:1}

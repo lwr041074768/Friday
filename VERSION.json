@@ -1,0 +1,10 @@
+{
+  "product": "Scientific Plot Studio",
+  "appVersion": "1.0.0",
+  "originHelperVersion": "2.6.0",
+  "nodeVersion": "24.15.0",
+  "desktopVersion": "0.6.0",
+  "desktopRuntime": "Electron 44.7.0",
+  "defaultDistribution": "electron-desktop",
+  "legacyWebVersion": "1.0.0"
+}

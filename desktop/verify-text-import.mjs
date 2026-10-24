@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import ts from 'typescript';
+const source = await fs.readFile(new URL('./renderer/text-decoding.ts', import.meta.url), 'utf8');
+const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
+const { decodeMeasurementText } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`);
+const text = 'Potential/V\tCurrent/A\r\n0.40\t0.0001\r\n0.41\t-0.0002\r\n0.42\t1.23e-5\r\n';
+const le = Buffer.from(text, 'utf16le');
+const be = Buffer.from(le); be.swap16();
+for (const bytes of [Buffer.from(text), Buffer.concat([Buffer.from([0xef, 0xbb, 0xbf]), Buffer.from(text)]), le, be, Buffer.concat([Buffer.from([0xff, 0xfe]), le]), Buffer.concat([Buffer.from([0xfe, 0xff]), be])]) assert.equal(decodeMeasurementText(bytes), text);
+assert.equal(decodeMeasurementText(Buffer.from([0xb5,0xe7,0xce,0xbb,0x2c,0xb5,0xe7,0xc1,0xf7,0x0a,0x31,0x2c,0x32,0x0a,0x33,0x2c,0x34])), '电位,电流\n1,2\n3,4');
+assert.throws(() => decodeMeasurementText(Buffer.from([0xff, 0xfe, 0x31])), /不完整/);
+assert.throws(() => decodeMeasurementText(new Uint8Array(30)), /二进制/);
+console.log('PASS: UTF-8, UTF-8 BOM, UTF-16 LE/BE with and without BOM, GBK Chinese headers, signed/scientific notation, and malformed input.');

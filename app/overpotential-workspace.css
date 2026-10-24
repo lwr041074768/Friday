@@ -1,0 +1,96 @@
+.eta-workspace{max-width:1900px;margin:0 auto;padding:18px 20px 22px;color:#172d43}
+.eta-layout{display:grid;grid-template-columns:330px minmax(0,1fr);align-items:start;gap:16px}
+.eta-left-panel,.eta-results{display:flex;flex-direction:column;gap:14px;min-width:0}
+.eta-left-panel>*{flex-shrink:0}
+.eta-workspace .eta-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:9px 8px;padding:2px 0}
+.eta-workspace .eta-heading .lsv-eyebrow{font-size:10px;letter-spacing:.035em}
+.eta-workspace h1{font-size:24px;line-height:1.3;font-weight:650;margin:7px 0 0;letter-spacing:0}
+.eta-workspace .eta-heading>.lsv-button{margin-top:0;min-height:35px;padding:7px 8px;gap:5px;font-size:12px!important}
+.eta-workspace .eta-heading p{grid-column:1/-1;margin:0;color:#74889b;font-size:12px;line-height:1.8}
+.eta-workspace .eta-overview{display:flex;align-items:center;flex-wrap:wrap;gap:8px 22px;border:1px solid #dce5ed;background:#f0f8f5;border-radius:9px;padding:11px 16px;font-size:12px;color:#6b8196}
+.eta-workspace .eta-overview b{font-size:17px;font-weight:650;color:#2c5275;margin-right:3px;font-variant-numeric:tabular-nums}
+.eta-workspace .eta-overview .eta-pending-count b{color:#a2722d}
+.eta-workspace .eta-scan-label{margin-left:auto;color:#526f8b;font-size:11px}
+.eta-workspace .eta-results>.lsv-demo-notice{margin:0}
+.eta-workspace .eta-chart-panel,.eta-workspace .eta-table-panel,.eta-style-panel{min-width:0;background:#fff;border:1px solid #dce5ed;border-radius:11px;overflow:hidden;box-shadow:0 2px 7px #23435c03}
+.eta-workspace .eta-panel-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:1px solid #e8edf3;padding:13px 15px}
+.eta-workspace .eta-panel-heading h2{font-size:14px;font-weight:650;margin:0;color:#294962}
+.eta-workspace .eta-panel-heading>span{font-size:11px;color:#7a8da0;white-space:nowrap}
+.eta-workspace .eta-chart-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:14px 16px;border-bottom:1px solid #e8edf3;background:linear-gradient(115deg,#fff,#f8fbfc)}
+.eta-workspace .eta-chart-title{display:flex;flex-direction:column;gap:5px;min-width:0}
+.eta-workspace .eta-chart-title h2{font-size:15px;font-weight:600;color:#294962;margin:0}
+.eta-workspace .eta-chart-title>span{font-size:11px;color:#7a8da0}
+.eta-workspace .eta-chart-actions{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-left:auto}
+.eta-workspace .eta-chart-actions>.lsv-button{font-size:12px!important;min-height:34px;padding:7px 10px;gap:5px}
+.eta-workspace .eta-chart-scroll{width:100%;min-height:380px;overflow:auto;overscroll-behavior:contain;display:flex;align-items:center;justify-content:center;background:#fff}
+.eta-workspace .eta-chart-scroll>svg{display:block;width:100%;height:auto;max-height:750px;flex-shrink:0}
+.eta-workspace .eta-table-scroll{max-height:270px;overflow:auto;overscroll-behavior:contain}
+.eta-workspace table{width:100%;border-collapse:collapse;text-align:left;font-size:12px;table-layout:fixed}
+.eta-workspace thead th{padding:10px 9px;color:#6b8197;font-weight:500;background:#f8fafd;position:sticky;top:0;z-index:1;border-bottom:1px solid #e6edf4}
+.eta-workspace thead th:first-child{width:33%}
+.eta-workspace thead th:nth-child(2){width:26%;text-align:right;white-space:nowrap}
+.eta-workspace tbody th,.eta-workspace tbody td{padding:10px 9px;border-bottom:1px solid #edf1f5;vertical-align:top;overflow-wrap:anywhere;font-weight:400;line-height:1.7}
+.eta-workspace tbody tr:last-child>th,.eta-workspace tbody tr:last-child>td{border-bottom:0}
+.eta-workspace .eta-sample-name{display:flex;align-items:baseline;gap:7px;font-weight:550;color:#35566f;line-height:1.6}
+.eta-workspace .eta-sample-name i{display:block;width:8px;height:8px;flex:0 0 8px;border-radius:2px}
+.eta-workspace .eta-value{text-align:right;font:600 14px/1.7 Arial,sans-serif;color:#2a506f;white-space:nowrap}
+.eta-workspace .eta-error{padding:3px 6px;text-align:right}
+.eta-workspace .eta-error input{width:70px;height:27px;border:1px solid #d8e3ec;border-radius:4px;background:#fbfdff;color:#30536f;font:12px Arial,sans-serif;padding:2px 6px;text-align:right}
+.eta-workspace tbody small{display:block;margin-top:4px;font-size:10px;color:#7a8da0;line-height:1.6}
+.eta-workspace tbody th small{padding-left:15px}
+.eta-workspace .eta-status{display:inline-block;padding:1px 5px;border-radius:4px;background:#edf7f2;color:#50806b;font-size:10px;line-height:1.7}
+.eta-workspace .eta-status-candidate{background:#eef4fd;color:#5879a3}
+.eta-workspace .eta-status-review{background:#fff5e6;color:#a27434}
+.eta-workspace .eta-export-message{font-size:12px;line-height:1.7;color:#437566;background:#f1f8f5;border:1px solid #d9e7e3;border-radius:6px;padding:9px 13px;margin:0}
+.eta-workspace .eta-empty{display:flex;flex:1;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;min-height:460px;padding:45px 24px;color:#8eaac7}
+.eta-workspace .eta-empty h2{font-size:20px;color:#385c7b;font-weight:600;margin:0}
+.eta-workspace .eta-empty p{font-size:13px;line-height:1.8;max-width:430px;color:#788da2;margin:0 0 6px}
+.eta-style-panel h2{display:flex;align-items:center;gap:7px}
+.eta-style-panel h2>span{font-size:11px;padding:1px 5px;border-radius:5px;background:#edf4fc;color:#607f9e;font-weight:400}
+.eta-style-filter{display:flex;align-items:center;gap:10px;padding:10px 12px 0}
+.eta-style-filter .lsv-select{width:160px!important;max-width:none;height:32px!important;font-size:12px!important}
+.eta-style-filter>small{font-size:10px;color:#8a9cad;margin-left:auto;white-space:nowrap}
+.eta-style-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:12px;max-height:280px;overflow-y:auto;overscroll-behavior:contain}
+.eta-style-tile{min-width:0;width:100%;border:1px solid #dfe7ef;border-radius:8px;background:#fbfcfe;padding:6px;transition:border-color .15s,background .15s;color:#496784;text-align:left}
+.eta-style-tile:hover{border-color:#98bce5;background:#f1f7ff}
+.eta-style-tile[aria-pressed=true]{border:2px solid #4385d3;padding:5px;background:#edf5ff;box-shadow:0 1px 5px #3673b014}
+.eta-style-thumbnail{display:flex;align-items:center;justify-content:center;width:100%;height:53px;overflow:hidden;pointer-events:none;background:white;border-radius:4px}
+.eta-style-thumbnail>svg{display:block;width:100%;height:auto;max-height:53px}
+.eta-style-name{display:flex;gap:3px;align-items:center;justify-content:space-between;font-size:10px;white-space:nowrap;padding:6px 0 1px}
+.eta-style-name svg{color:#2374d5;flex-shrink:0}
+.eta-style-description{border-top:1px solid #e8edf4;padding:10px 13px;background:#f9fbfe;color:#6b8198;font-size:11px;line-height:1.7}
+.eta-style-description>strong{font-size:12px;color:#466b91}
+.eta-style-description p{margin:3px 0;font-size:11px}
+.eta-style-description small{font-size:10px;color:#8698aa}
+.eta-style-description>details{margin-top:5px}
+.eta-style-description summary{cursor:pointer;font-size:10px;color:#68829b}
+.eta-style-description a{display:block;color:#2374d5;text-decoration:underline;font-size:10px;overflow-wrap:anywhere}
+.eta-style-tile:focus-visible{outline:3px solid #3c91d3;outline-offset:2px}
+/* Settings content is portalled outside the workbench. Keep its selectors self-contained. */
+.eta-settings-controls{display:grid;gap:10px;min-width:0}
+.eta-settings-controls .eta-axis-row{display:grid;grid-template-columns:1fr;gap:10px}
+.eta-settings-controls .eta-axis-range{display:flex;align-items:center;gap:8px;min-width:0;border:1px solid #dce5ef;border-radius:7px;background:#fff;padding:9px 10px;color:#61788e;font-size:12px}
+.eta-settings-controls .eta-axis-range strong{font-size:12px;font-weight:550;white-space:nowrap;min-width:73px}
+.eta-settings-controls input{border:1px solid #dde6ef;border-radius:5px;background:#f8fbfe;color:#30536f;padding:7px 8px;min-width:0;width:0;flex:1;font:13px Arial,sans-serif;height:34px}
+.eta-settings-controls .eta-axis-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.eta-settings-controls .eta-axis-actions .lsv-button{font-size:12px!important;min-height:32px;padding:6px 10px}
+.eta-settings-controls .eta-reset{border:0;background:none;font-size:12px;color:#6085aa;cursor:pointer;padding:5px 2px;white-space:nowrap}
+.eta-settings-controls .eta-tick-pair{display:flex;gap:12px;min-width:0}
+.eta-settings-controls .eta-tick-pair label{display:flex;align-items:center;gap:6px;min-width:0;flex:1;font-size:12px;color:#607b92;white-space:nowrap}
+.eta-settings-controls .eta-tick-pair input{min-width:42px}
+.eta-settings-controls .eta-axis-note{font-size:11px;color:#768a9c;line-height:1.8;margin:0}
+@media(min-width:900px) and (min-height:600px){
+  .eta-workspace .eta-layout{height:calc(100dvh - var(--lsv-header-height,104px) - 40px);min-height:450px}
+  .eta-workspace .eta-left-panel{max-height:100%;overflow-y:auto;overscroll-behavior:contain;padding-right:1px}
+  .eta-workspace .eta-results{height:100%;min-height:0}
+  .eta-workspace .eta-results>.eta-overview,.eta-workspace .eta-results>.lsv-demo-notice,.eta-workspace .eta-results>.eta-export-message{flex-shrink:0}
+  .eta-workspace .eta-chart-panel{display:flex;flex-direction:column;flex:1;min-height:0}
+  .eta-workspace .eta-chart-toolbar{flex-shrink:0}
+  .eta-workspace .eta-chart-scroll{flex:1;min-height:0}
+  .eta-workspace .eta-chart-scroll>svg{height:100%;max-height:none}
+  .eta-workspace .eta-empty{min-height:0}
+}
+@media(max-width:1100px){.eta-layout{grid-template-columns:300px minmax(0,1fr);gap:14px}.eta-workspace{padding:16px}.eta-workspace .eta-chart-toolbar{gap:12px;padding:12px}.eta-workspace .eta-chart-actions{gap:6px}.eta-workspace .eta-chart-actions>.lsv-button{padding:6px 8px}.eta-workspace .eta-scan-label{width:100%;margin-left:0}.eta-workspace .eta-overview{gap:6px 15px}.eta-style-grid{gap:6px;padding:10px}}
+@media(max-width:780px){.eta-layout{grid-template-columns:minmax(0,1fr)}.eta-workspace .eta-left-panel{display:grid;grid-template-columns:minmax(0,1fr);overflow:visible;max-height:none}.eta-style-grid{grid-template-columns:repeat(6,minmax(0,1fr));max-height:260px}.eta-workspace .eta-table-scroll{max-height:255px}.eta-workspace .eta-heading{grid-template-columns:minmax(0,1fr) auto}.eta-workspace .eta-chart-toolbar{align-items:flex-start}.eta-workspace .eta-chart-scroll>svg{min-width:520px}.eta-workspace .eta-chart-scroll{justify-content:flex-start}.eta-workspace .eta-empty{min-height:350px}}
+@media(max-width:570px){.eta-workspace{padding:16px 12px}.eta-style-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.eta-style-name{font-size:11px}.eta-workspace .eta-chart-actions{width:100%;margin-left:0}.eta-workspace .eta-chart-title h2{font-size:14px}.eta-settings-controls .eta-axis-range{flex-wrap:wrap}.eta-settings-controls .eta-axis-range strong{width:100%;flex-basis:100%}.eta-settings-controls .eta-tick-pair{flex-direction:column;gap:10px}}
+@media(prefers-reduced-motion:reduce){.eta-style-tile{transition:none}}

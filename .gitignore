@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env*
+!.env.example
+.runtime/
+release/
+*.exe
+*.log
+output/
+desktop/output/

@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import ts from 'typescript';
+const modules={};for(const name of ['lsv-math','scan-branches','tafel-auto','tafel-derived','tafel-data-export']){let code=ts.transpileModule(await readFile(new URL(`../lib/${name}.ts`,import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;code=code.replace(/(from\s*["'])(?:\.\/)?([^"']+)(["'])/g,(_,a,dep,b)=>{assert.ok(modules[dep],dep);return a+modules[dep]+b;});modules[name]=`data:text/javascript;base64,${Buffer.from(code).toString('base64')}`;}
+const {plotCurves}=await import(modules['lsv-math']),{buildTafelCsv}=await import(modules['tafel-data-export']);
+const curve={id:'a',name:' \t=1+1',source:'fixture.txt',color:'#2374d5',visible:false,unit:'mA',area:'2',resistance:'10',compensation:'raw',points:[{e:.3,current:-1},{e:.4,current:0},{e:NaN,current:NaN},{e:.5,current:10}]};
+const formulas={x:'LOG(ABS(I*1000))',y:'E-IR*I+0.0592*13.65+0.197-1.23'},settings={...formulas,resistance:'10',irMode:'resistance',voltage:'0',fraction:'100'};
+const result=plotCurves([curve],settings).curves;assert.equal(result[0].plotted[0].x,0);assert.equal(result[0].plotted[1],null);assert.equal(result[0].plotted[2],null);assert.equal(result[0].plotted[3].x,1);
+const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-10);near(result[0].plotted[0].y,.3+.01+.0592*13.65+.197-1.23);
+const csv=buildTafelCsv(result,'all',formulas,{x:'log10 current',y:'eta V'});assert.ok(csv.startsWith('\uFEFF'));assert.equal(csv.trimEnd().split('\r\n').length,5);assert.ok(csv.includes("' \t=1+1"));assert.ok(csv.includes(',-1,"mA",0,'));assert.ok(csv.includes(',0,"mA","","",0,0,'));
+const density=plotCurves([curve],{...settings,x:'LOG(ABS(j))'}).curves;near(density[0].plotted[0].x,Math.log10(.5));near(density[0].plotted[3].x,Math.log10(5));
+console.log('PASS: Tafel signed current and Rs correction, mA conversion, area normalization, zero/gap handling, complete hidden data CSV and formula-neutral metadata.');

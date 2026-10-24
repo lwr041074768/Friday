@@ -1,0 +1,246 @@
+/* Tafel shares the LSV work surface while keeping its resistance controls. */
+.tafel-workspace .tafel-analysis-tools{border-top:1px solid #dce6ef;padding-top:9px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.tafel-workspace .tafel-analysis-sample{display:flex;align-items:center;gap:9px;font-size:12px;color:#536d87;min-width:0}
+.tafel-workspace .tafel-analysis-sample select{flex:1;min-width:0;height:30px;border:1px solid #d1dfed;border-radius:6px;padding:3px 7px;background:#fff;color:#2d5174;font-size:12px}
+.tafel-workspace .tafel-analysis-actions{display:flex;flex-wrap:wrap;gap:6px}
+.tafel-workspace .tafel-analysis-actions .lsv-button{font-size:12px!important;min-height:32px;padding:6px 8px;gap:4px}
+.tafel-workspace .tafel-analysis-actions [aria-pressed=true]{background:#e8f2ff;border-color:#5895d8;color:#185fae}
+.tafel-workspace .tafel-fit-range{display:flex;align-items:end;gap:6px;color:#647e95;font-size:11px}
+.tafel-workspace .tafel-fit-range label{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.tafel-workspace .tafel-fit-range input{width:100%;min-width:0;height:30px;border:1px solid #d4dfeb;border-radius:5px;padding:4px 6px;font-size:12px;background:#fff;color:#315374}
+.tafel-workspace .tafel-fit-range>span{padding-bottom:5px}
+.tafel-workspace .tafel-mask-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11px;color:#617d96}
+.tafel-workspace .tafel-mask-actions>span,.tafel-workspace .tafel-mask-actions button{display:inline-flex;align-items:center;gap:4px}
+.tafel-workspace .tafel-mask-actions button{padding:3px;border:0;background:transparent;color:#3e709e;font-size:11px}
+.tafel-workspace .tafel-mask-actions button:disabled{opacity:.4}
+.tafel-workspace .tafel-analysis-hint,.tafel-workspace .tafel-analysis-notice,.tafel-workspace .tafel-analysis-error{font-size:11px;line-height:1.6;margin:0;overflow-wrap:anywhere}
+.tafel-workspace .tafel-analysis-hint{color:#71869a}.tafel-workspace .tafel-analysis-notice{color:#327965}.tafel-workspace .tafel-analysis-error{color:#b34635}
+.tafel-workspace .lsv-plot-right-panel{z-index:3;color:#25435f}
+.tafel-workspace .tafel-fit-card{height:100%;max-height:100%;overflow:auto;border:1px solid #cddded;background:white;border-radius:9px;padding:11px;scrollbar-gutter:stable}
+.tafel-workspace .tafel-fit-card-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px;margin-bottom:9px}
+.tafel-workspace .tafel-fit-card-heading button{border:0;background:transparent;font-size:20px;color:#67829b;padding:0 3px}
+.tafel-workspace .tafel-fit-card table{width:100%;border-collapse:collapse;font-size:11px;line-height:1.5;table-layout:fixed;font-variant-numeric:tabular-nums}
+.tafel-workspace .tafel-fit-card th,.tafel-workspace .tafel-fit-card td{border:1px solid #cbd8e4;padding:5px 6px;vertical-align:top;overflow-wrap:anywhere;font-weight:400}
+.tafel-workspace .tafel-fit-card th{text-align:left;width:43%;color:#58738c;background:#f6faff}
+.tafel-workspace .tafel-fit-card td{color:#244c75}.tafel-workspace .tafel-fit-card .tafel-slope-result td{font-weight:700;color:#166eb4}
+.tafel-workspace .tafel-fit-note{font-size:10px;line-height:1.7;color:#6c8399;margin:9px 0}
+.tafel-workspace .tafel-fit-export{width:100%;font-size:12px!important;min-height:32px;padding:6px}
+.tafel-workspace .lsv-results:has(.lsv-right-panel-below){height:auto;min-height:100%}
+.tafel-workspace .lsv-right-panel-below .lsv-plot-host{flex:none;height:clamp(320px,calc(100dvh - 420px),650px);aspect-ratio:auto;overflow:visible}
+.tafel-workspace .lsv-right-panel-below{overflow:visible}
+.tafel-workspace .lsv-right-panel-below .tafel-fit-card{max-width:650px;height:auto;max-height:none}
+.tafel-workspace [data-testid=tafel-range-min],.tafel-workspace [data-testid=tafel-range-max]{cursor:ew-resize!important;touch-action:none}
+.tafel-workspace [data-testid=tafel-fit-line]{pointer-events:none}
+@container (min-width:1100px){
+  .tafel-workspace .lsv-compact-toolbar.lsv-custom-plot .tafel-export-panel{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center}
+  .tafel-workspace .tafel-analysis-tools{grid-column:1/-1;display:grid;grid-template-columns:minmax(120px,1fr) auto;align-items:center}
+  .tafel-workspace .tafel-analysis-actions{justify-content:flex-end}
+  .tafel-workspace :is(.tafel-fit-range,.tafel-mask-actions,.tafel-analysis-hint,.tafel-analysis-error,.tafel-analysis-notice){grid-column:1/-1}
+}
+.tafel-workspace .lsv-controls > * {
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.tafel-workspace .lsv-compact-layout .lsv-control-section {
+  border: 1px solid #dfe6ee;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: #fff;
+}
+
+.tafel-workspace .lsv-section-title {
+  margin-bottom: 12px;
+}
+
+.tafel-workspace .lsv-section-title h2 {
+  font-size: 15px;
+}
+
+.tafel-workspace .lsv-formula-card .lsv-formula-display {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.tafel-workspace .lsv-formula-card .lsv-field {
+  margin-bottom: 12px;
+}
+
+.tafel-workspace .lsv-tafel-basis {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.tafel-workspace .tafel-formula-help {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #647c94;
+}
+
+.tafel-workspace .tafel-formula-help > summary {
+  cursor: pointer;
+  color: #486b8d;
+}
+
+.tafel-workspace .tafel-formula-help .lsv-formula-note {
+  margin-top: 10px;
+  padding: 9px 10px;
+  font-size: 12px;
+}
+
+.tafel-workspace .tafel-formula-help .lsv-subtle {
+  margin-top: 9px;
+  font-size: 12px;
+}
+
+.tafel-workspace .tafel-ir-card .lsv-field {
+  margin-bottom: 9px;
+}
+
+.tafel-workspace .tafel-ir-card .lsv-ir-status {
+  min-height: 0;
+  margin: 9px 0 0;
+}
+
+.tafel-workspace .tafel-ir-card .lsv-equation {
+  margin-top: 10px;
+  padding: 7px;
+  font-size: 12px;
+}
+
+.tafel-workspace .tafel-ir-card .lsv-subtle {
+  margin-top: 9px;
+  font-size: 12px;
+}
+
+.tafel-workspace .tafel-axis-settings > summary {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 650;
+  color: #345574;
+}
+
+.tafel-workspace .tafel-axis-settings > div {
+  padding-top: 12px;
+}
+
+.tafel-workspace .tafel-axis-settings .lsv-field:last-child {
+  margin-bottom: 0;
+}
+
+.tafel-workspace .tafel-curve-resistance {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px 10px;
+  margin-top: 8px;
+  min-width: 0;
+  font-size: 12px;
+  color: #607a93;
+}
+
+.tafel-workspace .tafel-curve-resistance > input {
+  flex: 1 1 95px;
+  min-width: 0;
+  width: 95px;
+  min-height: 32px;
+  border: 1px solid #d6e2ee;
+  border-radius: 6px;
+  padding: 5px 8px;
+  background-color: #fafdff;
+  color: #294a6c;
+  font-size: 13px;
+}
+
+.tafel-workspace .lsv-compact-toolbar.lsv-custom-plot .tafel-export-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 9px;
+  padding: 10px 12px;
+  min-width: 0;
+}
+
+.tafel-workspace .tafel-export-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  min-width: 0;
+  color: #345574;
+}
+
+.tafel-workspace .tafel-export-heading > strong {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.tafel-workspace .tafel-export-heading > span {
+  min-width: 0;
+  font-size: 12px;
+  color: #71859c;
+  overflow-wrap: anywhere;
+}
+
+.tafel-workspace .tafel-export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.tafel-workspace .tafel-export-actions .lsv-button {
+  min-width: 0;
+  min-height: 34px;
+  padding: 7px 9px;
+  gap: 5px;
+  font-size: 12px !important;
+}
+
+@container (max-width: 700px) {
+  .tafel-workspace .lsv-compact-toolbar.lsv-custom-plot .tafel-export-panel {
+    gap: 8px;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 780px) {
+  .tafel-workspace .lsv-controls {
+    gap: 12px;
+  }
+
+  .tafel-workspace .tafel-axis-settings > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .tafel-workspace .tafel-axis-settings .lsv-field {
+    margin-bottom: 0;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 800px) {
+  .tafel-workspace .lsv-controls { gap: 12px; }
+  .tafel-workspace .lsv-compact-layout .lsv-formula-card { padding: 14px; }
+  .tafel-workspace .lsv-formula-card .lsv-section-title { margin-bottom: 8px; }
+  .tafel-workspace .lsv-formula-card .lsv-field { margin-bottom: 8px; }
+  .tafel-workspace .lsv-formula-card .lsv-formula-display { padding: 6px 10px; }
+  .tafel-workspace .lsv-tafel-basis { margin-top: 8px; }
+  .tafel-workspace .tafel-formula-help { margin-top: 8px; }
+}
+
+@media (max-width: 480px) {
+  .tafel-workspace .tafel-axis-settings > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tafel-workspace .tafel-export-actions .lsv-button {
+    flex: 1 1 auto;
+  }
+}

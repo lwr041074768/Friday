@@ -1,0 +1,39 @@
+.lsv-axis-assign{display:flex;flex-direction:column;gap:9px;font-size:12px;color:#425d75}
+.lsv-axis-assign>p{margin:0;color:#70869a;line-height:1.6}
+.lsv-axis-assign-list{display:flex;flex-direction:column;gap:5px;padding:8px;border:1px solid #dbe4ec;border-radius:6px;background:#f8fafc;max-height:220px;overflow:auto}
+.lsv-axis-assign-list label{display:flex;align-items:center;gap:7px;cursor:pointer}
+.lsv-axis-assign-list label>i{width:14px;height:3px;border-radius:2px;flex:0 0 14px}
+.lsv-axis-assign-list label>input{width:14px;height:14px;margin:0}
+.lsv-axis-assign-list label>span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lsv-axis-assign-list label>em{font-style:normal;font-size:10px;color:#7d92a5;background:#edf2f7;border-radius:8px;padding:1px 6px}
+.lsv-axis-assign-list>small{color:#8193a5}
+.lsv-axis-field{display:flex;flex-direction:column;gap:3px;font-size:11px;color:#5d7488}
+.lsv-axis-field input{height:28px;border:1px solid #cfd9e3;border-radius:4px;background:#fff;color:#27445d;font:12px Arial,"Microsoft YaHei",sans-serif;padding:2px 7px}
+.lsv-axis-pair{display:flex;gap:6px}
+.lsv-axis-pair input{flex:1;min-width:0}
+.lsv-tick-break{display:flex;flex-direction:column;gap:4px;margin-top:6px;padding:7px 8px;border:1px dashed #d5dee7;border-radius:5px;background:#f8fafc}
+.lsv-tick-break>strong{font-size:10.5px;color:#5d7488;font-weight:600}
+.lsv-tick-break>label{display:flex;align-items:center;gap:6px;font-size:11px;color:#6b8094}
+.lsv-tick-break input{width:100%;height:24px;border:1px solid #cfd9e3;border-radius:3px;padding:1px 5px;font:11px Consolas,"Courier New",monospace}
+.lsv-tick-break>small{font-size:10px;line-height:1.5;color:#8193a5}
+.lsv-annotate{position:relative;display:inline-flex;flex-shrink:0}
+.lsv-annotate-trigger{display:inline-flex;align-items:center;gap:5px;height:32px;padding:0 10px;border:1px solid #d5e0ea;border-radius:6px;background:#fff;color:#3b5a74;font:12.5px Arial,"Microsoft YaHei",sans-serif;cursor:pointer}
+.lsv-annotate-trigger:hover{background:#f3f8fd;border-color:#b9cee1}
+.lsv-annotate-trigger.active{background:#e8f1fc;border-color:#9abde3;color:#1d5d9c}
+.lsv-annotate-menu{position:absolute;top:calc(100% + 6px);right:0;z-index:90;min-width:138px;background:#fff;border:1px solid #d6e1eb;border-radius:7px;box-shadow:0 10px 30px #1d2c3a1f;padding:5px;display:flex;flex-direction:column}
+.lsv-annotate-menu button{display:flex;align-items:center;gap:6px;border:0;background:none;text-align:left;padding:7px 9px;border-radius:4px;font:12px Arial,"Microsoft YaHei",sans-serif;color:#33516b;cursor:pointer}
+.lsv-annotate-menu button:hover{background:#eef4fb}
+.lsv-annotate-menu button.danger{color:#a33b3b}
+.lsv-annotation-editor{display:flex;align-items:center;gap:7px;padding:8px 22px;border-bottom:1px solid #e2ebf3;background:#f5f9fd;flex-wrap:wrap}
+.lsv-annotation-editor>span{font-size:11px;color:#5d7488}
+.lsv-annotation-editor input{flex:1;min-width:180px;height:30px;border:1px solid #cbd9e6;border-radius:5px;padding:2px 8px;font:12px Arial,"Microsoft YaHei",sans-serif;color:#27445d;background:#fff}
+.lsv-annotation-editor .lsv-button{height:30px}
+.lsv-annotation-hint{padding:6px 22px;border-bottom:1px solid #e6eef6;background:#fffaf0;color:#8a6a25;font-size:11.5px}
+
+.lsv-title-controls,.lsv-annotation-props{display:flex;flex-direction:column;gap:8px;font-size:12px;color:#425d75}
+.lsv-title-controls>p,.lsv-annotation-props>p{margin:0;line-height:1.6;color:#60788d}
+.lsv-title-actions{display:flex;gap:6px;flex-wrap:wrap}
+.lsv-title-controls>small{font-size:11px;color:#7b8fa3}
+.lsv-annotation-check{display:flex;align-items:center;gap:7px;font-size:12px;color:#425d75}
+.lsv-annotation-check input{width:14px;height:14px}
+.lsv-annotation-hint-line{margin:2px 0;padding:6px 8px;background:#f5f8fb;border:1px solid #e0e7ee;border-radius:4px;font-size:11px;line-height:1.6;color:#60788d}

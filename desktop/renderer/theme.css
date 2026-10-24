@@ -1,0 +1,55 @@
+/* The theme belongs to the application chrome. Scientific SVGs keep their
+   own paper colours, so switching theme does not change an exported figure. */
+.desktop-brand-controls{display:flex;align-items:center;gap:13px;flex-shrink:0;min-width:0}
+.desktop-theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:34px;padding:6px 9px;border:1px solid #d5e2ef;border-radius:8px;background:#f5f9fe;color:#426484;font-size:12px!important;font-weight:600;white-space:nowrap;flex-shrink:0}
+.desktop-theme-toggle:hover{background:#eaf3ff;border-color:#acc9e8}
+.desktop-theme-toggle:focus-visible{outline:2px solid #2b73d7;outline-offset:3px}
+@media(max-width:1280px){.desktop-brand-controls{gap:9px}.desktop-app .lsv-header{gap:17px}.desktop-app .lsv-tabs{gap:2px}.desktop-app .lsv-tabs a{padding-inline:9px}.desktop-app .lsv-brand{gap:9px}.desktop-app .lsv-brand small{font-size:10px;letter-spacing:.07em}}
+@media(max-width:1080px){.desktop-app .lsv-header{gap:12px;padding-inline:16px}.desktop-brand-controls{gap:8px}.desktop-app .lsv-brand{font-size:18px}.desktop-app .lsv-brand>span{width:38px;height:38px}.desktop-app .lsv-tabs a{padding-inline:7px;font-size:13px}.desktop-app .desktop-status{gap:5px}.desktop-theme-toggle{padding-inline:7px}}
+
+/* Night is monochrome UI. SVG contents are scientific paper, not UI chrome:
+   never recolour their axes, curves, legends or exported figure contents. */
+html[data-desktop-theme="night"],
+html[data-desktop-theme="night"] .desktop-body{
+  color-scheme:dark;
+  --studio-ink:#fff;--studio-muted:#fff;--studio-border:#404040;--studio-focus:#fff;
+  --background:#000;--foreground:#fff;--card:#000;--card-foreground:#fff;
+  --popover:#000;--popover-foreground:#fff;--primary:#fff;--primary-foreground:#000;
+  --secondary:#000;--secondary-foreground:#fff;--muted:#000;--muted-foreground:#fff;
+  --accent:#000;--accent-foreground:#fff;--border:#404040;--input:#404040;--ring:#fff;
+  background:#000;color:#fff;
+}
+
+/* Include Portal menus/dialogs and controls placed within a plot host. This
+   also covers literal day colours and newly added workbench panels. */
+html[data-desktop-theme="night"] .desktop-body :not(svg):not(svg *):not(.cdl-slot-select>i,.lsv-plot-legend i,.lsv-eta-row>i){
+  background-color:#000!important;
+  background-image:none!important;
+  color:#fff!important;
+  border-color:#404040!important;
+  box-shadow:none!important;
+  outline-color:#fff;
+  caret-color:#fff;
+  accent-color:#fff;
+}
+html[data-desktop-theme="night"] .desktop-body :is(input,textarea)::placeholder{color:#fff!important;opacity:1}
+html[data-desktop-theme="night"] .desktop-body :is(.lsv-tabs a span,.desktop-version,.lsv-brand small){opacity:1}
+html[data-desktop-theme="night"] .desktop-body .lucide{color:#fff!important}
+html[data-desktop-theme="night"] .desktop-body :is(button,a,[role="menuitem"],[role="option"]):hover:not(:disabled),
+html[data-desktop-theme="night"] .desktop-body :is([aria-current="page"],[aria-selected="true"],[aria-pressed="true"],[data-state="checked"],.cdl-slot.active){border-color:#fff!important}
+html[data-desktop-theme="night"] .desktop-body :focus-visible{outline-color:#fff!important}
+html[data-desktop-theme="night"] .desktop-body *{scrollbar-color:#707070 #000}
+html[data-desktop-theme="night"] .desktop-body *::-webkit-scrollbar-track{background:#000}
+html[data-desktop-theme="night"] .desktop-body *::-webkit-scrollbar-thumb{background:#707070}
+
+/* White paper includes the surrounding canvas and empty-plot guidance.
+   Sidebar controls inside the host still receive the black UI rule above. */
+html[data-desktop-theme="night"] .desktop-body :is(.lsv-plot-host,.lsv-plot-canvas,.eta-chart-scroll,.eta-style-thumbnail,.cdl-fit-responsive){
+  background-color:#fff!important;
+  color:#24435e!important;
+  color-scheme:light;
+}
+html[data-desktop-theme="night"] .desktop-body :is(.lsv-chart-empty,.lsv-chart-empty *){
+  background-color:transparent!important;
+  color:#24435e!important;
+}

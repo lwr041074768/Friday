@@ -1,0 +1,12 @@
+@import "../../app/globals.css";
+@import "./desktop.css";
+@import "./workbench-theme.css";
+@import "./theme.css";
+@import "./studio-shell.css";
+
+/* Shared Radix dialog/select components live outside the desktop Vite root.
+   Explicit sources keep their positioning, backdrop and focus styles in the
+   desktop bundle even when Tailwind starts scanning from desktop/. */
+@source "../../components";
+@source "../../app";
+@source "./";

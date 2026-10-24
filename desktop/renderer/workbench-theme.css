@@ -1,0 +1,234 @@
+/* Locally authored desktop theme. Chart geometry and numeric processing live
+   in the shared workspaces; this sheet changes their visual surfaces only. */
+.desktop-body {
+  --studio-ink: #16304a;
+  --studio-muted: #587188;
+  --studio-border: #dce5ef;
+  --studio-focus: #2869d5;
+  --studio-teal: #187f87;
+  --background: #f4f7fb;
+  --foreground: #16304a;
+  --popover: #ffffff;
+  --popover-foreground: #16304a;
+  --muted-foreground: #587188;
+  --border: #dce5ef;
+  --ring: #2869d5;
+  background: #f4f7fb;
+}
+.desktop-body .desktop-app {
+  color: var(--studio-ink);
+  background: radial-gradient(ellipse at 0 0, #edf5ff 0, transparent 43%),
+    radial-gradient(ellipse at 100% 0, #eef9f8 0, transparent 36%), #f4f7fb;
+}
+.desktop-app .lsv-header {
+  background: #ffffffed;
+  border-bottom-color: #dce6f1;
+  box-shadow: 0 2px 10px #29425d05;
+  backdrop-filter: blur(16px);
+  gap: 24px;
+}
+.desktop-app .lsv-brand { color: #17334d; letter-spacing: .015em; }
+.desktop-app .lsv-brand > span {
+  background: linear-gradient(145deg, #142d47, #20476a);
+  border: 1px solid #345472;
+  border-radius: 13px;
+  box-shadow: inset 0 1px 0 #ffffff15, 0 3px 10px #143b6614;
+}
+.desktop-app .lsv-brand > span svg { color: #a4d8fc; }
+.desktop-app .lsv-brand small { color: #5b7a97; }
+.desktop-app .lsv-tabs { gap: 6px; }
+.desktop-app .lsv-tabs a {
+  height: 44px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  color: #557087;
+  font-size: 14px;
+  transition: color .18s, background .18s, border-color .18s, box-shadow .18s;
+}
+.desktop-app .lsv-tabs a span { color: inherit; opacity: .68; }
+.desktop-app .lsv-tabs a:hover { color: #245a92; background: #f2f6fc; }
+.desktop-app .lsv-tabs a.active {
+  background: linear-gradient(135deg, #eef5ff, #f2f9fe);
+  border-color: #cdddF3;
+  box-shadow: inset 0 1px 0 #fff, 0 2px 5px #2f68bd07;
+  color: #245fc4;
+}
+.desktop-app .desktop-status { gap: 8px; color: #54728a; }
+.desktop-app .desktop-version { color: #627e94; }
+.desktop-app .desktop-status > button {
+  border-radius: 9px;
+  border-color: #dce6f0;
+  background: #f8fbff;
+  color: #536f89;
+  transition: background .18s, color .18s, box-shadow .18s;
+}
+.desktop-app .desktop-status > button:hover {
+  color: #235cbd; background: #edf4ff; box-shadow: 0 2px 6px #245da014;
+}
+.desktop-app :is(.cdl-card, .cdl-fit-card, .lsv-control-section, .lsv-curves-panel, .lsv-plot-panel, .lsv-data-panel,
+  .eta-chart-panel, .eta-table-panel, .eta-empty, .eta-overview, .xrd-settings, .xrd-reference-sidebar) {
+  border: 1px solid var(--studio-border);
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px #15324a03, 0 8px 24px #15324a05;
+}
+.desktop-app :is(.lsv-formula-card, .lsv-ir-section) {
+  background: linear-gradient(145deg, #ffffff, #f9fcff);
+}
+.desktop-app .lsv-plot-toolbar {
+  background: linear-gradient(120deg, #fcfdff, #f8fbfe);
+  border-bottom-color: #e6edf5;
+}
+.desktop-app .lsv-axis-controls { background: #fcfdff; border-bottom-color: #e7edf5; }
+.desktop-app .lsv-plot-host, .desktop-app .eta-chart-scroll { background: #fff; }
+.desktop-app .lsv-eyebrow { color: #5e7d97; }
+.desktop-app :is(.lsv-heading h1, .eta-heading h1) { color: #15354f; }
+.desktop-app :is(.lsv-control-section h2, .lsv-curves-heading h2, .eta-panel-heading h2) { color: #294b66; }
+.desktop-app :is(.lsv-heading > p, .lsv-heading p, .eta-heading p, .lsv-subtle, .lsv-footer,
+  .lsv-curve-details, .lsv-scan-note, .lsv-formula-note, .lsv-eta-basis) { color: #5e748a; }
+.desktop-app .lsv-help-button {
+  background: #edf5ff; color: #2a69b5; border-color: #d5e5f7; border-radius: 10px;
+}
+.desktop-app .lsv-formula-display {
+  background: #f5f8fc; border-color: #d9e5f0; border-radius: 8px; color: #365d83;
+  box-shadow: inset 0 1px 3px #15324a04;
+}
+.desktop-body .lsv-button {
+  border-radius: 8px;
+  transition: color .18s, background .18s, border-color .18s, box-shadow .18s;
+}
+.desktop-body .lsv-button.primary {
+  background: linear-gradient(130deg, #286cda, #2067c4);
+  border-color: #2465c4;
+  box-shadow: 0 2px 5px #1e62bd25, inset 0 1px 0 #ffffff20;
+  color: #fff;
+}
+.desktop-body .lsv-button.primary:hover:not(:disabled) {
+  background: linear-gradient(130deg, #2264cd, #1756ad);
+  box-shadow: 0 3px 9px #1e62bd35, inset 0 1px 0 #ffffff15;
+}
+.desktop-body .lsv-button.secondary {
+  background: #fff;
+  border-color: #d6e2ef;
+  color: #3c6388;
+  box-shadow: 0 1px 2px #193b5d05;
+}
+.desktop-body .lsv-button.secondary:hover:not(:disabled) {
+  background: #f3f8ff; border-color: #bbd1ea; color: #245db1;
+}
+.desktop-app :is(.lsv-compact-ir-row input, .lsv-field input, .lsv-field textarea,
+  .lsv-axis-range, .lsv-curve-row > input:not([type="color"]), .eta-axis-range,
+  .eta-axis-controls input, .xrd-reference-fields input, .xrd-reference-wave input) {
+  border-color: #d6e2ee;
+  border-radius: 8px;
+  background-color: #fafdff;
+  color: #244562;
+  box-shadow: inset 0 1px 2px #1b3c5a03;
+  transition: border-color .18s, box-shadow .18s, background .18s;
+}
+.desktop-app :is(input, textarea):focus-visible,
+.desktop-body [role="dialog"] :is(input, textarea):focus-visible {
+  outline: 2px solid #2b73d7;
+  outline-offset: 2px;
+  border-color: #81abdf;
+  box-shadow: 0 0 0 3px #e2edfc;
+  background-color: #fff;
+}
+.desktop-app :is(button, a, summary):focus-visible,
+.desktop-body :is([role="menuitem"], [role="option"]):focus-visible {
+  outline: 2px solid #2b73d7; outline-offset: 3px;
+}
+.desktop-app .lsv-select { border-radius: 8px; border-color: #d6e2ee !important; background-color: #fbfdff !important; }
+.desktop-app .cdl-workspace { background: transparent; min-height: calc(100dvh - 72px); padding: 22px 24px 24px; }
+.desktop-app .cdl-field > input { border-radius: 8px; border-color: #d6e2ee; background: #fafdff; color: #244562; }
+.desktop-app .cdl-sample.selected { background: #eff6ff; border-color: #d1e3f7; border-radius: 8px; }
+.desktop-app .lsv-eta-panel {
+  border-color: #d5e6ed;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f3f9ff, #f4fbfa);
+}
+.desktop-app .lsv-eta-title strong { color: #2b567b; }
+.desktop-app .lsv-eta-row > b { color: #2168b8; }
+.desktop-app .lsv-eta-name { color: #355a77; }
+.desktop-app .lsv-eta-row > small { color: #58798f; }
+.desktop-app .lsv-scan-controls button { border-radius: 9px; background: #fff; border-color: #dce6f0; color: #536e86; }
+.desktop-app .lsv-scan-controls button[aria-pressed="true"] {
+  background: #eef7fb; border-color: #9fcbd3; color: #176a76; box-shadow: inset 0 1px 0 #fff;
+}
+.desktop-app .lsv-scan-controls small { color: #667d92; }
+.desktop-app .lsv-scan-controls button[aria-pressed="true"] small { color: #4a7e89; }
+.desktop-app .lsv-plot-actions button { border-radius: 7px; color: #57738c; background: transparent; transition: background .18s, color .18s; }
+.desktop-app .lsv-plot-actions button:hover { background: #eaf2fc; color: #2466b8; }
+.desktop-app .lsv-plot-left-panel > .lsv-curves-panel { border-radius: 12px; box-shadow: 0 3px 15px #193b5c06; }
+.desktop-app .lsv-plot-left-panel .lsv-curves-heading { background: #f8fbff; border-bottom-color: #e3ecf5; }
+.desktop-app .lsv-managed-curve { border-top-color: #e7eef6; }
+.desktop-app .lsv-managed-curve.hidden-curve { background: #f6f9fc; }
+.desktop-app .lsv-curve-row > button { color: #607e96; border-radius: 6px; }
+.desktop-app .lsv-curve-row > button:hover { background: #edf4fc; color: #2768b6; }
+.desktop-app .lsv-delete-curve:hover { color: #b2474f !important; background: #fff1f2 !important; }
+.desktop-app .lsv-curves-heading h2 span { border-radius: 6px; background: #edf4fb; color: #49728f; }
+.desktop-app .lsv-compact-ir > small { color: #5a7a8f; }
+.desktop-app .lsv-import-message { background: #eff8f5; color: #2e6e5c; border-color: #d4e7df; border-radius: 9px; }
+.desktop-app .lsv-demo-notice { background: #eef5ff; border-color: #d8e6f6; color: #496f97; border-radius: 9px; }
+.desktop-app .lsv-error { border-radius: 9px; background: #fff3f3; color: #a53e47; border-color: #eed4d6; }
+.desktop-app .lsv-warning { color: #8e652f; background: #fff8ec; border-radius: 7px; }
+.desktop-app .eta-panel-heading { background: linear-gradient(120deg, #fcfdff, #f7fbfe); }
+.desktop-app .eta-overview { background: #ffffffc9; }
+.desktop-app .eta-overview b { color: #285779; }
+.desktop-app .eta-axis-controls { background: #f9fcff; }
+.desktop-app .eta-table-scroll thead th { background: #f3f8fc; color: #526f88; }
+.desktop-app .eta-table-scroll tbody tr:hover { background: #f7fbff; }
+.desktop-app .eta-status { border-radius: 5px; }
+.desktop-app .eta-status-candidate { color: #476d9d; background: #edf4ff; }
+.desktop-app .eta-sample-name, .desktop-app .eta-value { color: #315877; }
+.desktop-app .eta-table-scroll small { color: #607a90; }
+.desktop-body .lsv-import-modal, .desktop-body .lsv-help-modal,
+.desktop-body .xrd-reference-modal, .desktop-body .lsv-origin-modal {
+  border-color: #d5e1ed;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 12px 50px #12385826, 0 2px 8px #1238580c;
+}
+.desktop-body [data-slot="dialog-overlay"] { background: #132b4366; backdrop-filter: blur(3px); }
+.desktop-body .lsv-import-modal :is(input, textarea), .desktop-body .lsv-import-modal .lsv-select {
+  border-radius: 8px; border-color: #d5e1ed; background: #fbfdff;
+}
+.desktop-body .lsv-upload-zone { border-radius: 12px; background: linear-gradient(135deg, #f3f8ff, #f4fbfa); border-color: #a7c2df; }
+.desktop-body .lsv-upload-zone:hover { border-color: #5f94ce; background: #eff7ff; }
+.desktop-body .lsv-upload-zone strong { color: #3b6287; }
+.desktop-body .lsv-upload-zone span { color: #5f7a91; }
+.desktop-body .lsv-table-mapping { border-radius: 10px; background: #fcfdff; border-color: #dbe6f0; }
+.desktop-body .lsv-preview-table { border-radius: 8px; }
+.desktop-body :is(.lsv-options-popup, .lsv-data-export-menu) {
+  border-color: #d5e1ed; border-radius: 10px; background: #fff; padding: 5px;
+  box-shadow: 0 8px 26px #1b3f6020;
+}
+.desktop-body :is([data-slot="dropdown-menu-item"], [data-slot="select-item"]) { border-radius: 6px; color: #385b77; }
+.desktop-body :is([data-slot="dropdown-menu-item"], [data-slot="select-item"]):focus,
+.desktop-body [data-highlighted] { background-color: #edf5ff; color: #225fa9; }
+.desktop-app > section:not([hidden]) { animation: desktop-panel-reveal .18s ease-out; }
+@keyframes desktop-panel-reveal { from { opacity: .75; } to { opacity: 1; } }
+@media (max-width: 1280px) {
+  .desktop-app .lsv-tabs a span { display: none; }
+  .desktop-app .lsv-tabs { gap: 4px; }
+  .desktop-app .lsv-tabs a { padding-inline: 11px; }
+}
+@media (max-width: 1160px) {
+  .desktop-app .lsv-header { gap: 20px; }
+  .desktop-app .lsv-tabs a { padding-inline: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .desktop-app *, .desktop-body [role="dialog"] *, .desktop-body [role="menu"] * {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media (prefers-contrast: more) {
+  .desktop-app :is(.lsv-control-section, .lsv-curves-panel, .lsv-plot-panel, .eta-chart-panel, .eta-table-panel) { border-color: #8099b1; box-shadow: none; }
+  .desktop-app .lsv-header { background: #fff; }
+}

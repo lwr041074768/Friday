@@ -1,0 +1,22 @@
+{
+  "name": "react-remove-scroll-bar",
+  "installedVersion": "2.3.8",
+  "installedLicense": "MIT",
+  "npmMetadataUrl": "https://registry.npmjs.org/react-remove-scroll-bar/2.3.8",
+  "npmGitHead": "b3b1287aad81def2e2ae707274b74531b61ddbaf",
+  "npmIntegrity": "sha512-9r+yi9+mgU33AKcj6IbT9oRCO78WriSj6t/cF8DWBZJ9aOGPOTEDvdUDz1FwKim7QXWwmHqtdHnRJfhAxEG46Q==",
+  "repository": "https://github.com/theKashey/react-remove-scroll-bar",
+  "sourceCommit": "8ca9ba5ea52de03308fe8ced94f7b159a44d28ff",
+  "sourcePackageVersion": "2.3.7",
+  "baseTag": "v2.3.7",
+  "baseTagCommit": "29e9fcd1eecf7d3b77a767941c4a57fe461fc1e4",
+  "compareUrl": "https://api.github.com/repos/theKashey/react-remove-scroll-bar/compare/v2.3.7...8ca9ba5ea52de03308fe8ced94f7b159a44d28ff",
+  "compareResult": "The official GitHub comparison reports exactly one changed file: LICENSE (added). Runtime source and package.json are unchanged from tag v2.3.7.",
+  "licenseAddedAfterTag": true,
+  "packageJsonUrl": "https://raw.githubusercontent.com/theKashey/react-remove-scroll-bar/8ca9ba5ea52de03308fe8ced94f7b159a44d28ff/package.json",
+  "licenseUrl": "https://raw.githubusercontent.com/theKashey/react-remove-scroll-bar/8ca9ba5ea52de03308fe8ced94f7b159a44d28ff/LICENSE",
+  "licenseSha256": "a79aae0c0f21990d9d963bb3c5a79cdcea9a46f8523ba55c58d7fe776b6ebc84",
+  "verification": "The official source commit package.json declares 2.3.7 and MIT. The tag resolves to baseTagCommit. The official npm 2.3.8 integrity matches package-lock.json.",
+  "releaseLinkageVerified": false,
+  "limitation": "The installed npm package omits LICENSE. Its declared npmGitHead returns 404 from the official repository, and no v2.3.8 upstream tag was found. The v2.3.7 tag also lacks LICENSE. This is the original project LICENSE added by the official merged upstream commit after v2.3.7; it is not represented as a retrieved license from the inaccessible 2.3.8 source snapshot."
+}
